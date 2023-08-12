@@ -1,0 +1,9 @@
+{
+  "base_model": "decapoda-research/llama-7b-hf",
+  "prompt_template": "alpaca",
+  "dataset_name": "N/A (from text input)",
+  "dataset_rows": 911,
+  "trained_on_machine": "c3f8ed89656f",
+  "timestamp": 1691838969.98471,
+  "tuner_version": "a5aa1ad3"
+}
