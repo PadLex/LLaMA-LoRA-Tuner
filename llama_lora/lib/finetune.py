@@ -364,8 +364,9 @@ def train(
 
     if val_set_size > 0:
         train_val = train_data.train_test_split(
-            test_size=val_set_size, shuffle=True, seed=42
+            test_size=val_set_size, shuffle=False, seed=42
         )
+        print("Validation range:", train_val["test"])
         train_data = (
             train_val["train"].shuffle().map(generate_and_tokenize_prompt)
         )
@@ -373,6 +374,7 @@ def train(
             train_val["test"].shuffle().map(generate_and_tokenize_prompt)
         )
     else:
+        print("No validation!")
         train_data = train_data.shuffle().map(generate_and_tokenize_prompt)
         val_data = None
 
