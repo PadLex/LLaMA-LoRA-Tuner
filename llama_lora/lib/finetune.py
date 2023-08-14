@@ -366,7 +366,10 @@ def train(
         train_val = train_data.train_test_split(
             test_size=val_set_size, shuffle=False, seed=42
         )
-        print("Validation range:", train_val["test"][0], "...", train_val["test"][-1])
+        print("Validation range:")
+        print(train_val["test"][0])
+        print(train_val["test"][-1])
+        
         train_data = (
             train_val["train"].shuffle().map(generate_and_tokenize_prompt)
         )
